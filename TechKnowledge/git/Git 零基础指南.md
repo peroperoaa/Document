@@ -1,4 +1,4 @@
-# Git 零基础使用指南
+# Git 零基础指南
 
 ## 1. Git 简介
 
@@ -146,10 +146,6 @@ git rm --cached <file> //仅删除暂存区中的file文件
 
 ``.gitignore``文件中添加``temp/``可以忽略``.gitignore``任何路径下的``temp``文件夹
 
-
-
-
-
 ## 9. 分支操作
 
 ### 创建分支：
@@ -160,37 +156,51 @@ git branch branch_name
 
 ### 切换分支：
 
-```
-git checkout branch_name
+```CPP
+git switch branch_name //checkout可能有歧义
 ```
 
 ### 合并分支：
 
-```
+```cpp
 git merge branch_name
 ```
 
-## 10. 远程仓库操作
-
-### 添加远程仓库：
+## 10. (github原文)create a new repository on the command line:
 
 ```
-git remote add origin https://github.com/username/repository.git
+echo "# sdf" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin git@github.com:<用户名>/<仓库名>.git
+git push -u origin main
 ```
+
+## 11. (github原文)push an existing repository from the command line:
+
+```
+git remote add origin git@github.com:<用户名>/<仓库名>.git
+git branch -M main
+git push -u origin main
+```
+
+## 12.远程仓库的push和pull:
 
 ### 推送到远程仓库：
 
 ```
-git push -u origin master
+git push origin main
 ```
 
 ### 从远程仓库拉取：
 
 ```
-git pull origin master
+git pull origin main
 ```
 
-## 11. 常见问题和解决方法
+## 13. 常见问题和解决方法
 
 1. **合并冲突**：当两个分支修改了同一文件的同一部分时发生。需要手动解决冲突。
 
@@ -198,12 +208,12 @@ git pull origin master
 
 3. **找回已删除的文件**：使用 `git checkout` 恢复文件。
 
-## 12. 进阶学习建议
+## 14. 进阶内容
 
 - 学习更复杂的分支策略
 - 了解 Git 钩子（Hooks）
 - 探索 Git 工作流，如 Gitflow
 - 学习使用图形化 Git 工具
 
-记住，熟练使用 Git 需要时间和实践。不要害怕犯错，因为 Git 设计的初衷就是帮助你管理和恢复更改。
+## 熟练使用 Git 需要时间和实践。不要害怕犯错，毕竟 Git 设计的初衷就是帮助你管理和恢复更改。
 
