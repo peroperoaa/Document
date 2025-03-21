@@ -21,10 +21,10 @@ BYTE varByte;
 FString varString = TEXT("Hello World");
 
 // 不可变名称标识（用于资源路径等，内存效率高）
-FName varName = TEXT("Character_Name");
+FName MyName = FName(*MyString);
 
-// 本地化文本（支持多语言翻译）
-FText varText = NSLOCTEXT("Namespace", "Key", "默认文本");
+// 本地化文本
+FText MyText = FText::FromString(MyString);
 ```
 
 ## 数学相关类型
@@ -45,7 +45,7 @@ FTransform varTransform;
 */
 ```
 
-> **理解技巧**：
+> **理解**：
 >
 > 1. `FVector`就像游戏中的GPS坐标(X,Y,Z确定位置)
 > 2. `FRotator`类似相机云台的三个旋转轴控制
